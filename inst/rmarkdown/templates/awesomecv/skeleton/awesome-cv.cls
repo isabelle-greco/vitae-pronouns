@@ -278,7 +278,7 @@
 
 % Defines writer's pronouns (optional)
 % Usage: \pronouns{<pronouns>}
-\newcommand*{\pronouns}[]{\def@pronouns{#1}}
+\newcommand*{\pronouns}[]{\def\@pronouns{#1}}
 
 % Defines writer's mobile (optional)
 % Usage: \mobile{<mobile number>}
