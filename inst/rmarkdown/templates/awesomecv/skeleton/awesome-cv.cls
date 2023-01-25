@@ -278,7 +278,7 @@
 
 % Defines writer's pronouns (optional)
 % Usage: \pronouns{<pronouns>}
-\newcommand*{\pronouns}[]{\def\@pronouns{#1}}
+\newcommand*{\pronouns}[1]{\def\@pronouns{#1}}
 
 % Defines writer's mobile (optional)
 % Usage: \mobile{<mobile number>}
@@ -462,15 +462,14 @@
       \ifthenelse{\isundefined{\@pronouns}}%
         {}%
         {%
-        % TODO PICK ICON
           \faComment\acvHeaderIconSep\@pronouns%
           \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@mobile}}%
         {}%
         {%
+          \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
           \faMobile\acvHeaderIconSep\@mobile%
-          \setbool{isstart}{false}%
         }%
       \ifthenelse{\isundefined{\@email}}%
         {}%
